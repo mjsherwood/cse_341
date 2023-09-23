@@ -17,3 +17,73 @@ GET https://cse-341-lq9n.onrender.com/contacts/650cdfaf85ffb34ba1c3853b
 GET https://cse-341-lq9n.onrender.com/contacts/650cdfe285ffb34ba1c3853c
 ###
 GET https://cse-341-lq9n.onrender.com/contacts/650ce00c85ffb34ba1c3853d
+
+// LOCALHOST POST
+###
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "contact": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "favoriteColor": "Red",
+    "birthday": "01/01/1990"
+  }
+}
+
+// PRODUCTION POST
+###
+POST https://cse-341-lq9n.onrender.com/contacts
+Content-Type: application/json
+
+{
+  "contact": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "favoriteColor": "Red",
+    "birthday": "01/01/1990"
+  }
+}
+
+// LOCALHOST PUT
+###
+PUT http://localhost:8080/contacts/650e6aea09bf726a920a11e6
+Content-Type: application/json
+
+{
+  "contact": {
+    "firstName": "UpdatedName4",
+    "lastName": "UpdatedLastName",
+    "email": "updated@email.com",
+    "favoriteColor": "Green",
+    "birthday": "12/12/1990"
+  }
+}
+
+// PRODUCTION PUT
+###
+PUT https://cse-341-lq9n.onrender.com/contacts/650e6aea09bf726a920a11e6
+Content-Type: application/json
+
+{
+  "contact": {
+    "firstName": "UpdatedName",
+    "lastName": "UpdatedLastName",
+    "email": "updated@email.com",
+    "favoriteColor": "Green",
+    "birthday": "12/12/1990"
+  }
+}
+
+
+//LOCALHOST DELETE
+###
+DELETE http://localhost:8080/contacts/{id-to-delete}
+
+// PRODUCTION DELETE
+###
+DELETE https://cse-341-lq9n.onrender.com/contacts/{id-to-delete}
+

@@ -1,22 +1,41 @@
+require('dotenv').config();
 const express = require('express');
-const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
+const cors = require('cors');
 const port = process.env.PORT || 8080;
 const app = express();
+const { centralErrorHandler } = require('./middlewares/errorHandler');
 
 app
-  .use(bodyParser.json())
-  .use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    next();
-  })
+  .use(express.json())
+  .use(cors()) 
   .use('/', require('./routes'));
 
-mongodb.initDb((err, mongodb) => {
+// Centralized error handler
+app.use(centralErrorHandler);
+
+let server;
+
+mongodb.initDb((err, db) => {
   if (err) {
     console.log(err);
   } else {
-    app.listen(port);
-    console.log(`Connected to DB and listening on ${port}`);
+    server = app.listen(port, () => {
+      console.log(`Connected to DB and listening on ${port}`);
+    });
   }
 });
+
+const gracefulShutdown = () => {
+  console.log("\nGracefully shutting down...");
+
+  // Close the server
+  server.close(() => {
+    console.log("HTTP server closed.");      
+    process.exit(0);
+  });
+};
+
+// Listen for the signals and trigger the graceful shutdown
+process.on('SIGINT', gracefulShutdown);
+process.on('SIGTERM', gracefulShutdown);

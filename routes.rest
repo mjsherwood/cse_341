@@ -12,8 +12,8 @@ GET http://localhost:8080/contacts/650ce00c85ffb34ba1c3853d
 ###
 GET https://cse-341-lq9n.onrender.com/contacts
 ###
-GET https://cse-341-lq9n.onrender.com/650cdfaf85ffb34ba1c3853b
+GET https://cse-341-lq9n.onrender.com/contacts/650cdfaf85ffb34ba1c3853b
 ###
-GET https://cse-341-lq9n.onrender.com/650cdfe285ffb34ba1c3853c
+GET https://cse-341-lq9n.onrender.com/contacts/650cdfe285ffb34ba1c3853c
 ###
-GET https://cse-341-lq9n.onrender.com/650ce00c85ffb34ba1c3853d
+GET https://cse-341-lq9n.onrender.com/contacts/650ce00c85ffb34ba1c3853d

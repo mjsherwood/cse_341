@@ -5,11 +5,14 @@ const cors = require('cors');
 const port = process.env.PORT || 8080;
 const app = express();
 const { centralErrorHandler } = require('./middlewares/errorHandler');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger_output.json');
 
 app
   .use(express.json())
   .use(cors()) 
-  .use('/', require('./routes'));
+  .use('/', require('./routes'))
+  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Centralized error handler
 app.use(centralErrorHandler);

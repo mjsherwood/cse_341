@@ -19,7 +19,7 @@ GET https://cse-341-lq9n.onrender.com/contacts/650cdfe285ffb34ba1c3853c
 GET https://cse-341-lq9n.onrender.com/contacts/650ce00c85ffb34ba1c3853d
 
 // LOCALHOST POST
-###
+### 
 POST http://localhost:8080/contacts
 Content-Type: application/json
 
@@ -40,9 +40,9 @@ Content-Type: application/json
 
 {
   "contact": {
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john.doe@example.com",
+    "firstName": "John2",
+    "lastName": "Doe2",
+    "email": "john.doe2@example.com",
     "favoriteColor": "Red",
     "birthday": "01/01/1990"
   }
@@ -70,7 +70,7 @@ Content-Type: application/json
 
 {
   "contact": {
-    "firstName": "UpdatedName",
+    "firstName": "UpdatedName2",
     "lastName": "UpdatedLastName",
     "email": "updated@email.com",
     "favoriteColor": "Green",
@@ -85,5 +85,5 @@ DELETE http://localhost:8080/contacts/{id-to-delete}
 
 // PRODUCTION DELETE
 ###
-DELETE https://cse-341-lq9n.onrender.com/contacts/{id-to-delete}
+DELETE https://cse-341-lq9n.onrender.com/contacts/650e7191976d3dc7c2215e94
 

@@ -40,9 +40,9 @@ Content-Type: application/json
 
 {
   "contact": {
-    "firstName": "John2",
-    "lastName": "Doe2",
-    "email": "john.doe2@example.com",
+    "firstName": "John3",
+    "lastName": "Doe3",
+    "email": "john.doe3@example.com",
     "favoriteColor": "Red",
     "birthday": "01/01/1990"
   }
@@ -50,7 +50,7 @@ Content-Type: application/json
 
 // LOCALHOST PUT
 ###
-PUT http://localhost:8080/contacts/650e6aea09bf726a920a11e6
+PUT http://localhost:8080/contacts/{insert id here}
 Content-Type: application/json
 
 {
@@ -65,12 +65,12 @@ Content-Type: application/json
 
 // PRODUCTION PUT
 ###
-PUT https://cse-341-lq9n.onrender.com/contacts/650e6aea09bf726a920a11e6
+PUT https://cse-341-lq9n.onrender.com/contacts/{insert id here}
 Content-Type: application/json
 
 {
   "contact": {
-    "firstName": "UpdatedName2",
+    "firstName": "UpdatedName5",
     "lastName": "UpdatedLastName",
     "email": "updated@email.com",
     "favoriteColor": "Green",
@@ -81,9 +81,9 @@ Content-Type: application/json
 
 //LOCALHOST DELETE
 ###
-DELETE http://localhost:8080/contacts/{id-to-delete}
+DELETE http://localhost:8080/contacts/{insert id here}
 
 // PRODUCTION DELETE
 ###
-DELETE https://cse-341-lq9n.onrender.com/contacts/650e7191976d3dc7c2215e94
+DELETE https://cse-341-lq9n.onrender.com/contacts/{insert id here}
 
